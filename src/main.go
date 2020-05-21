@@ -11,11 +11,9 @@ import (
 //Handler - Is called after main
 func Handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
 
-	now := time.Now()
+	t := fmt.Sprintf("Time is %v", time.Now()) //fmt.Sprint returns a string, which is assigned to 't'
 
-	t := fmt.Sprintf("Time is %v", now)
-
-	return events.APIGatewayProxyResponse{Body: t, StatusCode: 200}, nil
+	return events.APIGatewayProxyResponse{Body: t, StatusCode: 200}, nil //Respond with 't' and a 200 Code
 }
 
 func main() {
